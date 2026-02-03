@@ -1,8 +1,6 @@
 AI Project Backend Service – Technical Documentation
 ## 1. What is this project?
 
-```
-
 This project is an integrated Backend service developed using FastAPI. It is designed to serve as a robust infrastructure capable of hosting Artificial Intelligence models in the future.
 
 The project focuses on:
@@ -17,8 +15,6 @@ The project does not focus on building an artificial intelligence model; instead
 ```
 
 ## 2. Tools & Technologies
-
-```
 
 Programming Language
 Python 3.13-slim: The slim version was specifically chosen to minimize the container footprint.
@@ -51,6 +47,7 @@ Python 3.13-slim: The slim version was specifically chosen to minimize the conta
 
 ## 3.  Architecture
 The project follows a simple Layered Architecture that clearly separates responsibilities:
+
 
 ```
 
@@ -104,8 +101,6 @@ ai_project/
 
 ## 5.  Docker Deployment (Docker Run) 🐳
 
-```
-
 Due to local system constraints, Play with Docker (PWD) was successfully utilized to build and run the project.
 
 Deployment Steps:
@@ -128,8 +123,6 @@ Note: The host was set to 0.0.0.0 within the container to enable external access
 ```
 
 ## 🛠️ 6. Troubleshooting & Challenges
-
-```
 
 During the Dockerization process on a Windows environment, several persistent network and security hurdles were encountered. Despite attempting all standard technical solutions, the local environment remained restricted.
 
@@ -155,8 +148,6 @@ The Final Workaround: After exhausting all local troubleshooting steps without s
 
 ## 7. API Usage & Testing
 
-```
-
 Testing was conducted via the interactive Swagger UI (accessible at /docs).
 ![Swagger UI](./screenshots/swagger-ui.png)
 ### Health Endpoint
@@ -179,6 +170,7 @@ GET /health
 
 ### Error Handling: 
 The API correctly validates inputs, returning 400 for empty fields and 422 for structural errors.
+
 **Health endpoint returning 200 OK.**
 ![Health Check](./screenshots/health-check.png) 
 

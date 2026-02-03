@@ -12,12 +12,9 @@ The project focuses on:
 
 The project does not focus on building an artificial intelligence model; instead, it focuses on creating the software infrastructure in which an AI model can be integrated later.
 
-```
+---
 
 ## 2. Tools & Technologies
-
-Programming Language
-Python 3.13-slim: The slim version was specifically chosen to minimize the container footprint.
 
 ### Programming Language
 
@@ -43,21 +40,19 @@ Python 3.13-slim: The slim version was specifically chosen to minimize the conta
 * **GitHub**
 *  The project is managed via feature-based branches (e.g., docker-support and api-health) to ensure organized development.
 
-```
+---
 
 ## 3.  Architecture
 The project follows a simple Layered Architecture that clearly separates responsibilities:
 
 
 ```
-
 API Layer           → routes.py
 Business Logic      → services.py
 Data Models         → schemas.py
 Error Handling      → errors.py
 Configuration       → config.py
 Application Boot    → main.py
-
 ```
 
 ### Architecture Explanation:
@@ -74,7 +69,7 @@ This separation makes it easier to:
 * Test individual components
 * Extend the project in the future (e.g., adding a database or AI model)
 
-```
+---
 
 ## 4.  Project Structure
 The actual file organization in ai_project:
@@ -98,29 +93,33 @@ ai_project/
 └── README.md
 ```
 
+---
 
 ## 5.  Docker Deployment (Docker Run) 🐳
 
 Due to local system constraints, Play with Docker (PWD) was successfully utilized to build and run the project.
 
 Deployment Steps:
-Build the Image:
+
+**Build the Image:**
 
 ```Bash
 docker build -t ai_project_backend .
 ```
+
 ![Docker Build](./screenshots/docker-build.jpg)
 
-Run the Container:
+**Run the Container:**
 
 ```Bash
 docker run -d -p 8000:8000 ai_project_backend
 ```
+
 ![Docker Run](./screenshots/docker-run.png)
 
 Note: The host was set to 0.0.0.0 within the container to enable external access.
 
-```
+---
 
 ## 🛠️ 6. Troubleshooting & Challenges
 
@@ -144,11 +143,12 @@ The Outcome: Despite applying the aforementioned fixes (DNS configuration and SS
 
 The Final Workaround: After exhausting all local troubleshooting steps without success, the project was successfully migrated to Play with Docker (PWD), a cloud-based Docker environment, where the build and deployment were completed seamlessly.
 
-```
+---
 
 ## 7. API Usage & Testing
 
-Testing was conducted via the interactive Swagger UI (accessible at /docs).
+**Testing was conducted via the interactive Swagger UI (accessible at /docs).**
+
 ![Swagger UI](./screenshots/swagger-ui.png)
 ### Health Endpoint
 
@@ -171,8 +171,11 @@ GET /health
 ### Error Handling: 
 The API correctly validates inputs, returning 400 for empty fields and 422 for structural errors.
 
+
 **Health endpoint returning 200 OK.**
+
 ![Health Check](./screenshots/health-check.png) 
 
 **Centralized error response for 404 Not Found.**
+
 ![Error Handling](./screenshots/error-test.png) 

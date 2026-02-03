@@ -1,11 +1,9 @@
 from pydantic import BaseModel
 
-
 class HealthResponse(BaseModel):
     status: str
 
-
 class ErrorResponse(BaseModel):
-    error: str
-    message: str
-    details: dict | None = None
+    error: str          # كود/اسم الخطأ
+    message: str        # شرح مختصر
+    details: dict | None = None  # تفاصيل اختيارية
